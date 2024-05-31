@@ -1,0 +1,35 @@
+/* Definieer kleuren als CSS-variabelen */
+.root {
+    /* Kleur variabelen */
+    -primary-color: #3190E9;
+    -secondary-color: #7BC7FF;
+    -hover-color: #CDE7FF;
+    -pressed-color: #EFF5FD;
+    -text-color: white;
+}
+
+/* Gebruik kleur variabelen in stijlregels */
+.label {
+    -fx-font-size: 24px;
+    -fx-text-fill: -primary-color;
+}
+
+.titleLabel {
+    -fx-font-size: 32px;
+    -fx-text-fill: -primary-color;
+}
+
+.button {
+    -fx-font-size: 18px;
+    -fx-background-color: -secondary-color;
+    -fx-text-fill: -text-color;
+    -fx-border-color: transparent;
+}
+
+.button:hover {
+    -fx-background-color: -hover-color;
+}
+
+.button:after {
+    -fx-background-color: -pressed-color;
+}

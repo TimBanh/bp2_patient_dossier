@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.bp2_patient_dossier.controllers.PatientDossierController"
+      spacing="10" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Wie gebruikt de applicatie?" styleClass="titleLabel"/>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Ziekenhuis" onAction="#navNaarZiekenhuisLijstScene" styleClass="button"/>
+        <Button text="Zorgverlener" onAction="#navNaarZorgverlenerLijstScene" styleClass="button"/>
+        <Button text="Patiënt" onAction="#navNaarPatientScene" styleClass="button"/>
+    </HBox>
+</VBox>
