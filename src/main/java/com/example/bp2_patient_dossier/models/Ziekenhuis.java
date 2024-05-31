@@ -9,12 +9,12 @@ public class Ziekenhuis {
     private ArrayList<Patient> patienten;
     private ArrayList<Zorgverlener> zorgverleners;
 
-    public Ziekenhuis(int id, String naam, String locatie, ArrayList<Patient> patienten, ArrayList<Zorgverlener> zorgverleners) {
+    public Ziekenhuis(int id, String naam, String locatie) {
         this.id = id;
         this.naam = naam;
         this.locatie = locatie;
-        this.patienten = patienten;
-        this.zorgverleners = zorgverleners;
+        this.patienten = new ArrayList<>();
+        this.zorgverleners = new ArrayList<>();
     }
 
     public int getId() {
