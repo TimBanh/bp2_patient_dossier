@@ -48,7 +48,7 @@
       </VBox>
    </left>
    <bottom>
-      <Label fx:id="lbZiekenhuis" prefHeight="78.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
+      <Label fx:id="lbZiekenhuis" prefHeight="78.0" prefWidth="500.0" BorderPane.alignment="CENTER" alignment="CENTER" />
    </bottom>
 
 </BorderPane>

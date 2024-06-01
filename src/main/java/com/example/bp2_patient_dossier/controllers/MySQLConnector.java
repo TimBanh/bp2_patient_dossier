@@ -119,4 +119,8 @@ public class MySQLConnector {
             throw new RuntimeException(e);
         }
     }
+
+    public void editZorgverlener(Zorgverlener zorgverlener) {
+
+    }
 }

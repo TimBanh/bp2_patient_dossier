@@ -17,7 +17,7 @@ public class ZorgverlenerFormController {
     @FXML private TextField tfVoornaam;
     @FXML private TextField tfAchternaam;
     @FXML private TextField tfFunctie;
-
+    private Zorgverlener selectedZorgverlener;
     private Ziekenhuis selectedZiekenhuis;
     private Stage stage;
     private MySQLConnector connector;
@@ -46,22 +46,12 @@ public class ZorgverlenerFormController {
         this.selectedZiekenhuis = selectedZiekenhuis;
     }
 
-    @FXML
-    private void navToHome() {
-        System.out.println("Home knop geklikt!");
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/start-view.fxml"));
-            Parent root = loader.load();
+    public void setSelectedZorgverlener(Zorgverlener selectedZorgverlener) {
+        this.selectedZorgverlener = selectedZorgverlener;
 
-            Scene startScene = new Scene(root);
-            startScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
-
-            stage.setScene(startScene);
-            stage.show();
-        }
-        catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        tfVoornaam.setText(this.selectedZorgverlener.getVoornaam());
+        tfAchternaam.setText(this.selectedZorgverlener.getAchternaam());
+        tfFunctie.setText(this.selectedZorgverlener.getFunctie());
     }
 
     @FXML
