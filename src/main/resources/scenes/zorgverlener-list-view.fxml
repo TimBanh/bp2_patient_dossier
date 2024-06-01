@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.bp2_patient_dossier.controllers.ZorgverlenerListController"
+            prefHeight="600"
+            prefWidth="1000">
+   <top>
+      <Label alignment="CENTER" prefHeight="70.0" prefWidth="360.0" text="Zorgverleners:" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <ListView fx:id="zorgverlenerListView" prefHeight="397.0" prefWidth="426.0" BorderPane.alignment="CENTER" onMouseClicked="#selectZorgverlener"/>
+   </center>
+   <left>
+      <VBox prefHeight="529.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Home" onAction="#navToHome">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="347.0" prefWidth="250.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Zorgverlener toevoegen" style="-fx-font-size: 12px" onAction="#navToAddZorgverlener">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Aanpassen">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Verwijderen">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <Label fx:id="lbSelectedZorgverlener" prefHeight="60" prefWidth="400"></Label>
+   </bottom>
+</BorderPane>

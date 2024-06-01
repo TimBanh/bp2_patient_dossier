@@ -9,12 +9,18 @@ public class Zorgverlener {
     private String functie;
     private ArrayList<Patient> patienten;
 
-    public Zorgverlener(int id, String voornaam, String achternaam, String functie, ArrayList<Patient> patienten) {
+    public Zorgverlener(int id, String voornaam, String achternaam, String functie) {
         this.id = id;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         this.functie = functie;
-        this.patienten = patienten;
+        this.patienten = new ArrayList<>();
+    }
+
+    public Zorgverlener(String voornaam, String achternaam, String functie) {
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.functie = functie;
     }
 
     public int getId() {
@@ -59,11 +65,6 @@ public class Zorgverlener {
 
     @Override
     public String toString() {
-        return "Zorgverlener{" +
-                "id=" + id +
-                ", voornaam='" + voornaam + '\'' +
-                ", achternaam='" + achternaam + '\'' +
-                ", functie='" + functie + '\'' +
-                '}';
+        return "Naam: " + voornaam + " " + achternaam + " Functie: " + functie;
     }
 }

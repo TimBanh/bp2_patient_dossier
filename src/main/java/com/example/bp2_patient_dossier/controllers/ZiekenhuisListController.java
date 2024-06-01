@@ -4,24 +4,28 @@ import com.example.bp2_patient_dossier.PatientDossierApp;
 import com.example.bp2_patient_dossier.models.Ziekenhuis;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ZiekenhuisController {
+public class ZiekenhuisListController {
     @FXML
     private ListView<Ziekenhuis> ziekenhuisList;
+    @FXML
+    private Label lbZiekenhuis;
     private Ziekenhuis selectedZiekenhuis;
     private Stage stage;
     private MySQLConnector connector;
 
-    public ZiekenhuisController() {
+    public ZiekenhuisListController() {
         this.stage = PatientDossierApp.getMainStage();
         connector = new MySQLConnector();
     }
@@ -42,8 +46,11 @@ public class ZiekenhuisController {
         if (selectedZiekenhuis != null) {
             // Voer acties uit op basis van het geselecteerde ziekenhuis
             System.out.println("Geselecteerd ziekenhuis: " + selectedZiekenhuis.getNaam());
+            lbZiekenhuis.setText(selectedZiekenhuis.toString());
+
         } else {
             System.out.println("Geen ziekenhuis geselecteerd.");
+            lbZiekenhuis.setText(selectedZiekenhuis.toString());
         }
     }
 
@@ -84,4 +91,26 @@ public class ZiekenhuisController {
         }
     }
 
+    @FXML
+    private void navToZorgverlener() throws IOException{
+        System.out.println("navToZorgverlener knop geklikt!");
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/scenes/zorgverlener-list-view.fxml"));
+            Parent root = loader.load();
+
+            Scene zorgverlenerListScene = new Scene(root);
+            zorgverlenerListScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
+
+            ZorgverlenerListController zorgverlenerListController = loader.getController();
+            zorgverlenerListController.setSelectedZiekenhuis(selectedZiekenhuis);
+
+            stage.setScene(zorgverlenerListScene);
+            stage.show();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

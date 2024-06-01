@@ -66,6 +66,6 @@ public class Ziekenhuis {
 
     @Override
     public String toString() {
-        return "Id: " + id + " Naam: " + naam + " Locatie: " + locatie;
+        return "Naam: " + naam + " Locatie: " + locatie;
     }
 }
