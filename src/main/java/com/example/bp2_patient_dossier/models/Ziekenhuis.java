@@ -17,6 +17,13 @@ public class Ziekenhuis {
         this.zorgverleners = new ArrayList<>();
     }
 
+    public Ziekenhuis (String naam, String locatie) {
+        this.naam = naam;
+        this.locatie = locatie;
+        this.patienten = new ArrayList<>();
+        this.zorgverleners = new ArrayList<>();
+    }
+
     public int getId() {
         return id;
     }
@@ -59,12 +66,6 @@ public class Ziekenhuis {
 
     @Override
     public String toString() {
-        return "Ziekenhuis{" +
-                "id=" + id +
-                ", naam='" + naam + '\'' +
-                ", locatie='" + locatie + '\'' +
-                ", patienten=" + patienten +
-                ", zorgverleners=" + zorgverleners +
-                '}';
+        return "Id: " + id + " Naam: " + naam + " Locatie: " + locatie;
     }
 }

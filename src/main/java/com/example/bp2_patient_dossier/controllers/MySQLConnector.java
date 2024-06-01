@@ -25,7 +25,7 @@ public class MySQLConnector {
         }
     }
 
-    public ArrayList<Ziekenhuis> GetZiekenhuizen() {
+    public ArrayList<Ziekenhuis> getZiekenhuizen() {
         String query = "Select * FROM Ziekenhuis";
 
         ArrayList<Ziekenhuis> ziekenhuisList = new ArrayList<>();
@@ -42,13 +42,34 @@ public class MySQLConnector {
                 Ziekenhuis ziekenhuis = new Ziekenhuis(id, naam, locatie);
                 ziekenhuisList.add(ziekenhuis);
 
-                resultSet.close();
-                statement.close();
             }
+
+            resultSet.close();
+            statement.close();
         }
         catch (SQLException ex) {
             ex.printStackTrace();
         }
         return ziekenhuisList;
+    }
+
+    public void addZiekenhuis(Ziekenhuis ziekenhuis) {
+        String query = "INSERT INTO Ziekenhuis (naam, locatie) VALUES (?, ?)";
+
+        if (ziekenhuis.getNaam().equals("") || ziekenhuis.getLocatie().equals("")) {
+            System.out.println("Naam en locatie moeten ingevuld zijn");
+            return;
+        }
+
+        try (PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setString(1, ziekenhuis.getNaam());
+            statement.setString(2, ziekenhuis.getLocatie());
+
+            statement.executeUpdate();
+
+            System.out.println("Ziekenhuis toegevoegd aan database.");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
