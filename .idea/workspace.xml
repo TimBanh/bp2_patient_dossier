@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef9f1c2-a9e2-427d-b0bb-34b562071faf" name="Changes" comment="Added edit zorgverlener view">
+    <list default="true" id="7ef9f1c2-a9e2-427d-b0bb-34b562071faf" name="Changes" comment="Added delete Zorgverlener">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-patient-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-patientdossier-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/edit-patient-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/patient-list-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/PatientDossierApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/PatientDossierApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MySQLConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MySQLConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/add-ziekenhuis-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-ziekenhuis-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/add-zorgverlener-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-zorgverlener-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/models/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/models/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/start-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/ziekenhuis-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/ziekenhuis-list-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/zorgverlener-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/zorgverlener-list-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +123,7 @@
       <workItem from="1717142830753" duration="4859000" />
       <workItem from="1717153944085" duration="2985000" />
       <workItem from="1717249405792" duration="20957000" />
-      <workItem from="1717324108101" duration="5390000" />
+      <workItem from="1717324108101" duration="14439000" />
     </task>
     <task id="LOCAL-00001" summary="Model klassen toegevoegd">
       <created>1717076667154</created>
@@ -156,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717283627977</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added delete Zorgverlener">
+      <created>1717330879245</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717330879245</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +191,8 @@
     <MESSAGE value="Added ziekenhuislijst &amp; add ziekenhuis knop" />
     <MESSAGE value="Added Zorgverlener lijst en zorgverlener add functie" />
     <MESSAGE value="Added edit zorgverlener view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added edit zorgverlener view" />
+    <MESSAGE value="Added delete Zorgverlener" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added delete Zorgverlener" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

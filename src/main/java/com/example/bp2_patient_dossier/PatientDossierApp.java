@@ -1,6 +1,5 @@
 package com.example.bp2_patient_dossier;
 
-import com.example.bp2_patient_dossier.controllers.PatientDossierController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

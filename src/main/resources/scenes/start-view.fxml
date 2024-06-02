@@ -9,7 +9,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.bp2_patient_dossier.controllers.PatientDossierController"
+            fx:controller="com.example.bp2_patient_dossier.controllers.MainController"
             prefHeight="600"
             prefWidth="1000">
 

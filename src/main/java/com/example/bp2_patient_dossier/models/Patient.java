@@ -15,6 +15,13 @@ public class Patient {
         this.BSN = BSN;
     }
 
+    public Patient(String voornaam, String achternaam, String geslacht, int BSN) {
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.geslacht = geslacht;
+        this.BSN = BSN;
+    }
+
     public int getId() {
         return id;
     }
@@ -57,12 +64,6 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" +
-                "id=" + id +
-                ", voornaam='" + voornaam + '\'' +
-                ", achternaam='" + achternaam + '\'' +
-                ", geslacht='" + geslacht + '\'' +
-                ", BSN=" + BSN +
-                '}';
+        return "Naam: " + voornaam + " " + achternaam + " Geslacht: " + geslacht;
     }
 }

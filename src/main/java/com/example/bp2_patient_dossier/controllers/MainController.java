@@ -10,18 +10,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PatientDossierController {
+public class MainController {
     private MySQLConnector mySQLConnector = new MySQLConnector();
     private Stage stage;
 
-    @FXML
-    private Button hospitalButton;
-    @FXML
-    private Button caregiverButton;
-    @FXML
-    private Button patientButton;
-
-    public PatientDossierController() {
+    public MainController() {
         this.stage = PatientDossierApp.getMainStage();
     }
 

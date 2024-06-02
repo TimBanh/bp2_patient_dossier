@@ -28,7 +28,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Patiënten">
+            <Button mnemonicParsing="false" onAction="#navToPatienten" prefHeight="26.0" prefWidth="150.0" text="Patiënten">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

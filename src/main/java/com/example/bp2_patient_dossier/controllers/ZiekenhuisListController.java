@@ -4,7 +4,6 @@ import com.example.bp2_patient_dossier.PatientDossierApp;
 import com.example.bp2_patient_dossier.models.Ziekenhuis;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,7 +46,6 @@ public class ZiekenhuisListController {
             // Voer acties uit op basis van het geselecteerde ziekenhuis
             System.out.println("Geselecteerd ziekenhuis: " + selectedZiekenhuis.getNaam());
             lbZiekenhuis.setText(selectedZiekenhuis.toString());
-
         } else {
             System.out.println("Geen ziekenhuis geselecteerd.");
             lbZiekenhuis.setText(selectedZiekenhuis.toString());
@@ -84,6 +82,30 @@ public class ZiekenhuisListController {
             addZiekenhuisScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
 
             stage.setScene(addZiekenhuisScene);
+            stage.show();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void navToPatienten() throws IOException{
+        System.out.println("navToZorgverlener knop geklikt!");
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/scenes/patient-list-view.fxml"));
+            Parent root = loader.load();
+
+            Scene zorgverlenerListScene = new Scene(root);
+            zorgverlenerListScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
+
+            PatientListController patientListController = loader.getController();
+            patientListController.setSelectedZiekenhuis(selectedZiekenhuis);
+
+            stage.setScene(zorgverlenerListScene);
             stage.show();
         }
         catch (IOException ex) {
