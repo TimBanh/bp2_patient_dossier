@@ -94,6 +94,11 @@ public class ZiekenhuisListController {
     private void navToPatienten() throws IOException{
         System.out.println("navToZorgverlener knop geklikt!");
 
+        if (selectedZiekenhuis == null) {
+            lbZiekenhuis.setText("Selecteer een ziekenhuis!");
+            return;
+        }
+
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/scenes/patient-list-view.fxml"));
@@ -116,6 +121,11 @@ public class ZiekenhuisListController {
     @FXML
     private void navToZorgverlener() throws IOException{
         System.out.println("navToZorgverlener knop geklikt!");
+
+        if (selectedZiekenhuis == null) {
+            lbZiekenhuis.setText("Selecteer een ziekenhuis!");
+            return;
+        }
 
         try {
             FXMLLoader loader = new FXMLLoader();

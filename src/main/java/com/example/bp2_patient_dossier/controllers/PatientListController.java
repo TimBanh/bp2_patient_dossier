@@ -49,10 +49,9 @@ public class PatientListController {
             // Voer acties uit op basis van het geselecteerde Patiënt
             System.out.println("Geselecteerd ziekenhuis: " + selectedPatient.getVoornaam() + " " + selectedPatient.getAchternaam());
             lbSelectedPatiënt.setText(selectedPatient.toString());
-
         } else {
             System.out.println("Geen ziekenhuis geselecteerd.");
-            lbSelectedPatiënt.setText("Geen ziekenhuis geselecteerd");
+            lbSelectedPatiënt.setText("Geen patiënt geselecteerd");
         }
     }
 
@@ -78,6 +77,11 @@ public class PatientListController {
     @FXML
     private void navToEditPatient() {
         System.out.println("navToEditPatient knop geklikt!");
+
+        if (selectedPatient == null) {
+            lbSelectedPatiënt.setText("Selecteer een patiënt!");
+            return;
+        }
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/edit-patient-view.fxml"));
@@ -111,6 +115,35 @@ public class PatientListController {
 
             PatientFormController patientFormController = loader.getController();
             patientFormController.setSelectedZiekenhuis(selectedZiekenhuis);
+
+            stage.setScene(addZorgverlenerScene);
+            stage.show();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void navToEditPatientDossier() {
+        System.out.println("navToAddPatient knop geklikt!");
+
+        if (selectedPatient == null) {
+            lbSelectedPatiënt.setText("Selecteer een patiënt!");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/edit-patientdossier-view.fxml"));
+            Parent root = loader.load();
+
+            Scene addZorgverlenerScene = new Scene(root);
+            addZorgverlenerScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
+
+            PatientDossierFormController patientDossierFormController = loader.getController();
+            patientDossierFormController.setSelectedZiekenhuis(selectedZiekenhuis);
+            patientDossierFormController.setSelectedPatient(selectedPatient);
+            patientDossierFormController.getPatientDossier();
 
             stage.setScene(addZorgverlenerScene);
             stage.show();
@@ -160,6 +193,11 @@ public class PatientListController {
     @FXML
     private void navToAddPatientDossier() {
         System.out.println("navToAddPatientDossier knop geklikt!");
+
+        if (selectedPatient == null) {
+            lbSelectedPatiënt.setText("Selecteer een patiënt!");
+            return;
+        }
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/add-patientdossier-view.fxml"));

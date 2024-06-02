@@ -1,10 +1,13 @@
 package com.example.bp2_patient_dossier.controllers;
 
 import com.example.bp2_patient_dossier.models.Patient;
+import com.example.bp2_patient_dossier.models.PatientDossier;
 import com.example.bp2_patient_dossier.models.Ziekenhuis;
 import com.example.bp2_patient_dossier.models.Zorgverlener;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 
 public class MySQLConnector {
@@ -51,6 +54,58 @@ public class MySQLConnector {
             ex.printStackTrace();
         }
         return ziekenhuisList;
+    }
+
+    public ArrayList<Patient> getPatientenByZorgverlener(Zorgverlener zorgverlener) {
+        ArrayList<Patient> patienten = new ArrayList<>();
+        String query = "SELECT p.* FROM Patiënt p " +
+                "INNER JOIN Patiënt_Zorgverlener pz ON p.id = pz.Patiëntid " +
+                "WHERE pz.Zorgverlenerid = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, zorgverlener.getId());
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String voornaam = resultSet.getString("voornaam");
+                String achternaam = resultSet.getString("achternaam");
+                String geslacht = resultSet.getString("Geslacht");
+                int bsn  = resultSet.getInt("BSN");
+
+                Patient patient = new Patient(id, voornaam, achternaam, geslacht, bsn); // Vul de ontbrekende patiëntgegevens in
+                patienten.add(patient);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return patienten;
+    }
+
+    public ArrayList<Patient> getUnassignedPatientenByZorgverler(Zorgverlener zorgverlener) {
+        ArrayList<Patient> unassignedPatienten = new ArrayList<>();
+        String query = "SELECT * FROM Patiënt WHERE id NOT IN " +
+                "(SELECT Patiëntid FROM Patiënt_Zorgverlener WHERE Zorgverlenerid = ?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, zorgverlener.getId());
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String voornaam = resultSet.getString("voornaam");
+                String achternaam = resultSet.getString("achternaam");
+                String geslacht = resultSet.getString("Geslacht");
+                int bsn  = resultSet.getInt("BSN");
+
+                Patient patient = new Patient(id, voornaam, achternaam, geslacht, bsn);
+                unassignedPatienten.add(patient);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return unassignedPatienten;
     }
 
     public void addZiekenhuis(Ziekenhuis ziekenhuis) {
@@ -122,6 +177,65 @@ public class MySQLConnector {
         return patienten;
     }
 
+    public PatientDossier getPatientenDossier(Patient patient) {
+        String query = "SELECT * FROM Patiëntdossier WHERE Patiëntid = ?";
+
+        PatientDossier patientDossier = null;
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, patient.getId());
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String voornaam = resultSet.getString("voornaam");
+                    String achternaam = resultSet.getString("achternaam");
+                    Date geboortedatum = resultSet.getDate("geboortedatum");
+                    String adres = resultSet.getString("adres");
+                    int bsn = resultSet.getInt("BSN");
+                    String medischGeschiedenis = resultSet.getString("medischGeschiedenis");
+                    String medicatie = resultSet.getString("medicatie");
+
+                    LocalDate localGeboorteDatum = geboortedatum.toLocalDate();
+
+                    patientDossier = new PatientDossier(id, voornaam,achternaam, localGeboorteDatum, adres, bsn, medischGeschiedenis, medicatie);
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return patientDossier;
+    }
+
+    public PatientDossier getPatientdossierByBSN(String bsn) {
+        String query = "SELECT * FROM Patiëntdossier WHERE BSN = ?";
+
+        PatientDossier patientDossier = null;
+        int BSN = Integer.parseInt(bsn);
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, BSN);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String voornaam = resultSet.getString("voornaam");
+                    String achternaam = resultSet.getString("achternaam");
+                    Date geboortedatum = resultSet.getDate("geboortedatum");
+                    String adres = resultSet.getString("adres");
+                    int patientBsn = resultSet.getInt("BSN");
+                    String medischGeschiedenis = resultSet.getString("medischGeschiedenis");
+                    String medicatie = resultSet.getString("medicatie");
+
+                    LocalDate localGeboorteDatum = geboortedatum.toLocalDate();
+
+                    patientDossier = new PatientDossier(id, voornaam, achternaam, localGeboorteDatum, adres, patientBsn, medischGeschiedenis, medicatie);
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return patientDossier;
+    }
+
     public void addZorgverlener(Zorgverlener zorgverlener, Ziekenhuis ziekenhuis) {
         String query = "INSERT INTO Zorgverlener (voornaam, achternaam, functie, Ziekenhuisid) VALUES (?, ?, ?, ?)";
 
@@ -164,6 +278,63 @@ public class MySQLConnector {
             System.out.println("Patiënt toegevoegd aan database.");
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void addPatientDossier(PatientDossier patientDossier, Patient patient) {
+        String query = "INSERT INTO Patiëntdossier (voornaam, achternaam, geboortedatum," +
+                " adres, BSN, medischGeschiedenis," +
+                " medicatie, Patiëntid)" +
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        java.sql.Date sqlDate = java.sql.Date.valueOf(patientDossier.getGeboorteDatum());
+
+        try (PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setString(1, patientDossier.getVoornaam());
+            statement.setString(2, patientDossier.getAchternaam());
+            statement.setDate(3, sqlDate);
+            statement.setString(4, patientDossier.getAdres());
+            statement.setInt(5, patientDossier.getBSN());
+            statement.setString(6, patientDossier.getMedischGeschiedenis());
+            statement.setString(7, patientDossier.getMedicatie());
+            statement.setInt(8, patient.getId());
+
+            statement.executeUpdate();
+
+            System.out.println("Patiëntdossier toegevoegd aan database.");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void addKoppelPatientZorgverlener(Patient patient, Zorgverlener zorgverlener) {
+        String query = "INSERT INTO Patiënt_Zorgverlener (Patiëntid, Zorgverlenerid) VALUES (?, ?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, patient.getId());
+            statement.setInt(2, zorgverlener.getId());
+            statement.executeUpdate();
+            System.out.println("Koppeling toegevoegd aan de koppeltabel.");
+        } catch (SQLException e) {
+            throw new RuntimeException("Fout bij toevoegen van koppeling aan koppeltabel", e);
+        }
+    }
+
+    public void deleteKoppelPatientZorgverlener(Patient patient, Zorgverlener zorgverlener) {
+        String query = "DELETE FROM Patiënt_Zorgverlener WHERE Patiëntid = ? AND Zorgverlenerid = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, patient.getId());
+            statement.setInt(2, zorgverlener.getId());
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Koppeling verwijderd uit de koppeltabel.");
+            } else {
+                System.out.println("Geen overeenkomende koppeling gevonden om te verwijderen.");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Fout bij verwijderen van koppeling uit koppeltabel", e);
         }
     }
 
@@ -215,6 +386,34 @@ public class MySQLConnector {
                 System.out.println("Zorgverlener bijgewerkt in de database.");
             } else {
                 System.out.println("Geen zorgverlener gevonden met ID: " + patient.getId());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void editPatientDossier(PatientDossier patientDossier) {
+        String query = "UPDATE Patiëntdossier SET voornaam = ?, achternaam = ?, geboortedatum = ?, adres = ?, BSN = ?" +
+                ", medischGeschiedenis = ?, medicatie = ? WHERE id = ?";
+
+        java.sql.Date sqlDate = java.sql.Date.valueOf(patientDossier.getGeboorteDatum());
+
+        try (PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setString(1, patientDossier.getVoornaam());
+            statement.setString(2, patientDossier.getAchternaam());
+            statement.setDate(3, sqlDate);
+            statement.setString(4, patientDossier.getAdres());
+            statement.setInt(5, patientDossier.getBSN());
+            statement.setString(6, patientDossier.getMedischGeschiedenis());
+            statement.setString(7, patientDossier.getMedicatie());
+            statement.setInt(8, patientDossier.getId());
+
+            int rowsUpdated = statement.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                System.out.println("Zorgverlener bijgewerkt in de database.");
+            } else {
+                System.out.println("Geen zorgverlener gevonden met ID: " + patientDossier.getId());
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

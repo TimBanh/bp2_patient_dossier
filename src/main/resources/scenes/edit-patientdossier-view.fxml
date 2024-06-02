@@ -24,7 +24,7 @@
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#navToPatientList" prefWidth="150" text="Patiënten" />
-            <Button mnemonicParsing="false" onAction="#addPatientDossier" prefWidth="150" text="Toevoegen" />
+            <Button mnemonicParsing="false" onAction="#editPatientDossier" prefWidth="150" text="Aanpassen" />
          </children>
       </VBox>
    </left>

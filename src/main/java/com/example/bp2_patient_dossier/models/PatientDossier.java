@@ -1,22 +1,44 @@
 package com.example.bp2_patient_dossier.models;
 
-public class PatiëntDossier {
+import java.time.LocalDate;
+
+public class PatientDossier {
     private int id;
     private String voornaam;
     private String achternaam;
-    private String geslacht;
+    private LocalDate geboorteDatum;
+    private String adres;
     private int BSN;
     private String medischGeschiedenis;
     private String medicatie;
 
-    public PatiëntDossier(int id, String voornaam, String achternaam, String geslacht, int BSN, String medischGeschiedenis, String medicatie) {
+    public PatientDossier(int id, String voornaam, String achternaam, LocalDate geboorteDatum, String adres, int BSN, String medischGeschiedenis, String medicatie) {
         this.id = id;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
-        this.geslacht = geslacht;
+        this.geboorteDatum = geboorteDatum;
+        this.adres = adres;
         this.BSN = BSN;
         this.medischGeschiedenis = medischGeschiedenis;
         this.medicatie = medicatie;
+    }
+
+    public PatientDossier(String voornaam, String achternaam, LocalDate geboorteDatum, String adres, int BSN, String medischGeschiedenis, String medicatie) {
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.geboorteDatum = geboorteDatum;
+        this.adres = adres;
+        this.BSN = BSN;
+        this.medischGeschiedenis = medischGeschiedenis;
+        this.medicatie = medicatie;
+    }
+
+    public PatientDossier(String voornaam, String achternaam, LocalDate geboorteDatum, String adres, int BSN) {
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.geboorteDatum = geboorteDatum;
+        this.adres = adres;
+        this.BSN = BSN;
     }
 
     public int getId() {
@@ -43,12 +65,20 @@ public class PatiëntDossier {
         this.achternaam = achternaam;
     }
 
-    public String getGeslacht() {
-        return geslacht;
+    public LocalDate getGeboorteDatum() {
+        return geboorteDatum;
     }
 
-    public void setGeslacht(String geslacht) {
-        this.geslacht = geslacht;
+    public void setGeboorteDatum(LocalDate geboorteDatum) {
+        this.geboorteDatum = geboorteDatum;
+    }
+
+    public String getAdres() {
+        return adres;
+    }
+
+    public void setAdres(String adres) {
+        this.adres = adres;
     }
 
     public int getBSN() {
@@ -81,7 +111,7 @@ public class PatiëntDossier {
                 "id=" + id +
                 ", voornaam='" + voornaam + '\'' +
                 ", achternaam='" + achternaam + '\'' +
-                ", geslacht='" + geslacht + '\'' +
+                ", geslacht='" + geboorteDatum.toString() + '\'' +
                 ", BSN=" + BSN +
                 ", medischGeschiedenis='" + medischGeschiedenis + '\'' +
                 ", medicatie='" + medicatie + '\'' +

@@ -88,6 +88,7 @@ public class PatientFormController {
         tfBSN.setText(bsnString);
     }
 
+
     public void setSelectedZiekenhuis(Ziekenhuis selectedZiekenhuis) {
         this.selectedZiekenhuis = selectedZiekenhuis;
     }
@@ -113,4 +114,7 @@ public class PatientFormController {
             ex.printStackTrace();
         }
     }
+
+
+
 }

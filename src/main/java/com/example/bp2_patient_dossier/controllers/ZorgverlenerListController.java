@@ -56,7 +56,7 @@ public class ZorgverlenerListController {
 
         } else {
             System.out.println("Geen ziekenhuis geselecteerd.");
-            lbSelectedZorgverlener.setText(selectedZorgverlener.toString());
+            lbSelectedZorgverlener.setText("Geen Zorgverlener geselecteerd");
         }
     }
 
@@ -123,6 +123,10 @@ public class ZorgverlenerListController {
     private void navToEditZorgverlener() {
         System.out.println("navToEditZorgverlener knop geklikt!");
 
+        if (selectedZorgverlener == null) {
+            lbSelectedZorgverlener.setText("Selecteer een zorgverlener!");
+        }
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/edit-zorgverlener-view.fxml"));
             Parent root = loader.load();
@@ -133,6 +137,7 @@ public class ZorgverlenerListController {
             ZorgverlenerFormController zorgverlenerFormController = loader.getController();
             zorgverlenerFormController.setSelectedZorgverlener(this.selectedZorgverlener);
             zorgverlenerFormController.setSelectedZiekenhuis(this.selectedZiekenhuis);
+            zorgverlenerFormController.getPatientenByZorgverlener();
 
             stage.setScene(editZorgverlenerScene);
             stage.show();

@@ -21,8 +21,8 @@
 
             <Label text="Wie gebruikt de applicatie?" styleClass="titleLabel"/>
             <HBox spacing="10" alignment="CENTER">
-                <Button text="Ziekenhuis" onAction="#navNaarZiekenhuisLijstScene" styleClass="button"/>
-                <Button text="Patiënt" onAction="#navNaarPatientScene" styleClass="button"/>
+                <Button text="Ziekenhuis" onAction="#navToZiekenhuisLijstScene" styleClass="button"/>
+                <Button text="Patiënt" onAction="#navToPatientScene" styleClass="button"/>
             </HBox>
         </VBox>
     </center>

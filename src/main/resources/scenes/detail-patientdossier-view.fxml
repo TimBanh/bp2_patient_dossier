@@ -14,7 +14,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.bp2_patient_dossier.controllers.PatientDossierFormController"
+            fx:controller="com.example.bp2_patient_dossier.controllers.PatientDossierDetailController"
             prefHeight="600"
             prefWidth="1000">
    <top>
@@ -23,8 +23,7 @@
    <left>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#navToPatientList" prefWidth="150" text="Patiënten" />
-            <Button mnemonicParsing="false" onAction="#addPatientDossier" prefWidth="150" text="Toevoegen" />
+            <Button mnemonicParsing="false" onAction="#navToHome" prefWidth="150" text="Home" />
          </children>
       </VBox>
    </left>
@@ -52,8 +51,8 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1">
                <children>
-                  <TextField fx:id="tfVoornaam" />
-                  <TextField fx:id="tfAchternaam" />
+                  <TextField fx:id="tfDetailVoornaam" />
+                  <TextField fx:id="tfDetailAchternaam" />
                </children>
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="22.0" GridPane.rowIndex="1">
@@ -80,9 +79,9 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <DatePicker fx:id="dpGeboorteDatum" prefHeight="26.0" prefWidth="242.0" />
-                  <TextField fx:id="tfAdres" />
-                  <TextField fx:id="tfBSN" />
+                  <DatePicker fx:id="dpDetailGeboorteDatum" prefHeight="26.0" prefWidth="242.0" />
+                  <TextField fx:id="tfDetailAdres" />
+                  <TextField fx:id="tfDetailBSN" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
@@ -100,7 +99,7 @@
             </VBox>
             <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
                <children>
-                  <TextArea fx:id="taMedisch" prefHeight="200.0" prefWidth="200.0">
+                  <TextArea fx:id="taDetailMedisch" prefHeight="200.0" prefWidth="200.0">
                      <VBox.margin>
                         <Insets right="10.0" />
                      </VBox.margin>
@@ -112,7 +111,7 @@
             </VBox>
             <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <TextArea fx:id="taMedicatie" prefHeight="200.0" prefWidth="200.0">
+                  <TextArea fx:id="taDetailMedicatie" prefHeight="200.0" prefWidth="200.0">
                      <VBox.margin>
                         <Insets bottom="5.0" right="10.0" />
                      </VBox.margin>

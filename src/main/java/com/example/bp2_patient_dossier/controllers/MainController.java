@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,7 +18,7 @@ public class MainController {
     }
 
     @FXML
-    private void navNaarZiekenhuisLijstScene() {
+    private void navToZiekenhuisLijstScene() {
         System.out.println("Ziekenhuis knop geklikt!");
 
         try {
@@ -39,8 +38,21 @@ public class MainController {
 
 
     @FXML
-    private void navNaarPatientScene() {
-        System.out.println("Patiënt knop geklikt!");
-        // Voeg hier de logica toe voor wat er moet gebeuren als de patiënt knop wordt geklikt
+    private void navToPatientScene() {
+        System.out.println("Ziekenhuis knop geklikt!");
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/patient-bsn-view.fxml"));
+            Parent root = loader.load();
+
+            Scene ziekenhuisScene = new Scene(root);
+            ziekenhuisScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
+
+            stage.setScene(ziekenhuisScene);
+            stage.show();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
