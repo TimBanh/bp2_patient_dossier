@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bp2_patient_dossier.controllers.ZorgverlenerListController">
+   <top>
+      <Label alignment="CENTER" prefHeight="70.0" prefWidth="360.0" text="Zorgverleners:" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <ListView fx:id="zorgverlenerListView" onMouseClicked="#selectZorgverlener" prefHeight="397.0" prefWidth="426.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefHeight="529.0" prefWidth="250.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#navToHome" prefWidth="150.0" text="Home">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Ziekenhuizen" onAction="#navToZiekenhuisListScene"/>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="347.0" prefWidth="250.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#navToAddZorgverlener" prefWidth="150.0" style="-fx-font-size: 12px" text="Zorgverlener toevoegen">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#navToEditZorgverlener" prefWidth="150.0" text="Aanpassen">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#deleteZorgverlener" prefWidth="150.0" text="Verwijderen">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <Label fx:id="lbSelectedZorgverlener" alignment="CENTER" prefHeight="60" prefWidth="500.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

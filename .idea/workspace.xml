@@ -4,28 +4,117 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef9f1c2-a9e2-427d-b0bb-34b562071faf" name="Changes" comment="" />
+    <list default="true" id="7ef9f1c2-a9e2-427d-b0bb-34b562071faf" name="Changes" comment="Added patient edit and delete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/KoppelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/connect-patient-zorgverlener-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/detail-patientdossier-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/edit-patientdossier-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/patient-bsn-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MySQLConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MySQLConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/models/PatiëntDossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/models/PatientDossier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/add-patientdossier-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-patientdossier-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/patient-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/patient-list-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/start-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2hBkYofrfHsS7Ub4gn5xy4giyCP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/T_Tim/Desktop/Inhalen/Periode 2/bp2_patient_dossier&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.21609196&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\T_Tim\Desktop\Inhalen\Periode 2\bp2_patient_dossier\src\main\resources\scenes" />
+      <recent name="C:\Users\T_Tim\Desktop\Inhalen\Periode 2\bp2_patient_dossier\src\main\java\com\example\bp2_patient_dossier\Stylesheets" />
+      <recent name="C:\Users\T_Tim\Desktop\Inhalen\Periode 2\bp2_patient_dossier\src\main\java\com\example\bp2_patient_dossier" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.example.bp2_patient_dossier" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PatientDossierApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.bp2_patient_dossier.PatientDossierApp" />
+      <module name="bp2_patient_dossier" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.bp2_patient_dossier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PatientDossierApp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,9 +123,68 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717074910197</updated>
-      <workItem from="1717074911426" duration="1000" />
+      <workItem from="1717074911426" duration="3229000" />
+      <workItem from="1717078233168" duration="1923000" />
+      <workItem from="1717137724418" duration="4162000" />
+      <workItem from="1717142830753" duration="4859000" />
+      <workItem from="1717153944085" duration="2985000" />
+      <workItem from="1717249405792" duration="20957000" />
+      <workItem from="1717324108101" duration="28199000" />
     </task>
+    <task id="LOCAL-00001" summary="Model klassen toegevoegd">
+      <created>1717076667154</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717076667154</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added MySQLConnector and made main scene with styling">
+      <created>1717148026142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717148026142</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added ziekenhuislijst &amp; add ziekenhuis knop">
+      <created>1717258529759</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717258529759</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Zorgverlener lijst en zorgverlener add functie">
+      <created>1717279686438</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717279686438</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added edit zorgverlener view">
+      <created>1717283627977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717283627977</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added delete Zorgverlener">
+      <created>1717330879245</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717330879245</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added patient edit and delete">
+      <created>1717345093830</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717345093830</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -48,5 +196,36 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Model klassen toegevoegd" />
+    <MESSAGE value="Added MySQLConnector and made main scene with styling" />
+    <MESSAGE value="Added ziekenhuislijst &amp; add ziekenhuis knop" />
+    <MESSAGE value="Added Zorgverlener lijst en zorgverlener add functie" />
+    <MESSAGE value="Added edit zorgverlener view" />
+    <MESSAGE value="Added delete Zorgverlener" />
+    <MESSAGE value="Added patient edit and delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added patient edit and delete" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierFormController.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.bp2_patient_dossier.models.Zorgverlener" memberName="id" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

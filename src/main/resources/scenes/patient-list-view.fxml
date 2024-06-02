@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bp2_patient_dossier.controllers.PatientListController">
+   <top>
+      <Label alignment="CENTER" prefHeight="70.0" prefWidth="500.0" text="Patienten:" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#navToHome" prefWidth="150.0" text="Home" />
+            <Button fx:id="btnZiekenhuis" mnemonicParsing="false" onAction="#navToZiekenhuisListScene" prefWidth="150.0" text="Ziekenhuis" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#navToAddPatient" prefWidth="150.0" text="Toevoegen" />
+                  <Button mnemonicParsing="false" onAction="#navToEditPatient" prefWidth="150.0" text="Aanpassen" />
+                  <Button mnemonicParsing="false" onAction="#deletePatient" prefWidth="150.0" text="Verwijderen" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#navToAddPatientDossier" prefWidth="150.0" style="-fx-font-size: 12;" text="Dossier toevoegen" />
+                  <Button mnemonicParsing="false" onAction="#navToEditPatientDossier" prefWidth="150.0" text="Dossier inzien" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <ListView fx:id="patientListView" onMouseClicked="#setSelectedPatient" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <Label fx:id="lbSelectedPatiënt" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

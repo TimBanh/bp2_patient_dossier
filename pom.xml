@@ -38,6 +38,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -61,7 +67,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.bp2_patient_dossier/com.example.bp2_patient_dossier.HelloApplication
+                                com.example.bp2_patient_dossier/com.example.bp2_patient_dossier.PatientDossierApp
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
