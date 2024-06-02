@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,6 +18,8 @@ public class ZorgverlenerFormController {
     @FXML private TextField tfVoornaam;
     @FXML private TextField tfAchternaam;
     @FXML private TextField tfFunctie;
+    @FXML private Label lbErrorMessage;
+    @FXML private Label lbEditErrorMessage;
     private Zorgverlener selectedZorgverlener;
     private Ziekenhuis selectedZiekenhuis;
     private Stage stage;
@@ -35,9 +38,34 @@ public class ZorgverlenerFormController {
         String achternaam = tfAchternaam.getText();
         String functie = tfFunctie.getText();
 
+        if (voornaam.equals("") || achternaam.equals("") || functie.equals("")) {
+            lbErrorMessage.setText("Alle velden moet ingevuld zijn!");
+            return;
+        }
+
         Zorgverlener zorgverlener = new Zorgverlener(voornaam, achternaam, functie);
 
         connector.addZorgverlener(zorgverlener, selectedZiekenhuis);
+
+        navToZorgverlenerList();
+    }
+
+    @FXML
+    private void editZorgverlener() throws IOException {
+        System.out.println("editZorgverlener knop geklikt!");
+
+        selectedZorgverlener.setVoornaam(tfVoornaam.getText());
+        selectedZorgverlener.setAchternaam(tfAchternaam.getText());
+        selectedZorgverlener.setFunctie(tfFunctie.getText());
+
+        if (selectedZorgverlener.getVoornaam().equals("") || selectedZorgverlener.getVoornaam().equals("") || selectedZorgverlener.getFunctie().equals("")) {
+            lbEditErrorMessage.setText("Alle velden moet ingevuld zijn!");
+            return;
+        }
+
+        Zorgverlener zorgverlener = selectedZorgverlener;
+
+        connector.editZorgverlener(zorgverlener);
 
         navToZorgverlenerList();
     }

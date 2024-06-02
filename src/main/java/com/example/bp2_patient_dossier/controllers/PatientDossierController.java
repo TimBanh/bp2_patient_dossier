@@ -44,11 +44,6 @@ public class PatientDossierController {
         }
     }
 
-    @FXML
-    private void navNaarZorgverlenerLijstScene() {
-        System.out.println("Zorgverlener knop geklikt!");
-        // Voeg hier de logica toe voor wat er moet gebeuren als de zorgverlener knop wordt geklikt
-    }
 
     @FXML
     private void navNaarPatientScene() {

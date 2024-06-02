@@ -52,12 +52,31 @@ public class ZorgverlenerListController {
         if (selectedZorgverlener != null) {
             // Voer acties uit op basis van het geselecteerde Zorgverlener
             System.out.println("Geselecteerd ziekenhuis: " + selectedZorgverlener.getVoornaam() + " " + selectedZorgverlener.getAchternaam());
-            lbSelectedZorgverlener.setText(selectedZiekenhuis.toString());
+            lbSelectedZorgverlener.setText(selectedZorgverlener.toString());
 
         } else {
             System.out.println("Geen ziekenhuis geselecteerd.");
-            lbSelectedZorgverlener.setText(selectedZiekenhuis.toString());
+            lbSelectedZorgverlener.setText(selectedZorgverlener.toString());
         }
+    }
+
+    @FXML
+    private void deleteZorgverlener() {
+        System.out.println("deleteZorgverlener knop geklikt!");
+
+        if (selectedZorgverlener == null) {
+            lbSelectedZorgverlener.setText("Selecteer een zorgverlener!");
+            return;
+        }
+
+        connector.deleteZorgverlener(selectedZorgverlener);
+
+        ArrayList<Zorgverlener> zorgverleners = connector.getZorgverleners(selectedZiekenhuis);
+        ObservableList<Zorgverlener> ziekenhuisObservableList = FXCollections.observableArrayList(zorgverleners);
+        zorgverlenerListView.setItems(ziekenhuisObservableList);
+
+        selectedZorgverlener = null;
+        lbSelectedZorgverlener.setText("");
     }
 
     @FXML
@@ -116,6 +135,25 @@ public class ZorgverlenerListController {
             zorgverlenerFormController.setSelectedZiekenhuis(this.selectedZiekenhuis);
 
             stage.setScene(editZorgverlenerScene);
+            stage.show();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void navToZiekenhuisListScene() {
+        System.out.println("Ziekenhuis knop geklikt!");
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/ziekenhuis-list-view.fxml"));
+            Parent root = loader.load();
+
+            Scene ziekenhuisScene = new Scene(root);
+            ziekenhuisScene.getStylesheets().add(getClass().getResource("/stylesheets/mainStyle.css").toExternalForm());
+
+            stage.setScene(ziekenhuisScene);
             stage.show();
         }
         catch (IOException ex) {

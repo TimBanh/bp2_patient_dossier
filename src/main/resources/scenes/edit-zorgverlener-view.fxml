@@ -16,27 +16,27 @@
       <Label alignment="CENTER" prefHeight="70.0" prefWidth="360.0" text="Zorgverlener Aanpassen:" BorderPane.alignment="CENTER" />
    </top>
    <left>
-      <VBox prefHeight="530.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="530.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#navToZorgverlenerList" prefWidth="150.0" text="Zorgverleners">
                <VBox.margin>
-                  <Insets left="10.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
    </left>
    <right>
-      <VBox prefHeight="530.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="530.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false"  prefWidth="150.0" text="Aanpassen">
+            <Button mnemonicParsing="false" onAction="#editZorgverlener" prefWidth="150.0" text="Aanpassen">
                <VBox.margin>
-                  <Insets left="20.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" prefWidth="150.0" style="-fx-font-size: 12;" text="Patient toevoegen">
                <VBox.margin>
-                  <Insets left="20.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
          </children>
@@ -98,4 +98,7 @@
          </children>
       </GridPane>
    </center>
+   <bottom>
+      <Label fx:id="lbEditErrorMessage" style="-fx-text-fill: red" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

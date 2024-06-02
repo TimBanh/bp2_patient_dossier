@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef9f1c2-a9e2-427d-b0bb-34b562071faf" name="Changes" comment="Added Zorgverlener lijst en zorgverlener add functie">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" afterDir="false" />
+    <list default="true" id="7ef9f1c2-a9e2-427d-b0bb-34b562071faf" name="Changes" comment="Added edit zorgverlener view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MySQLConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/MySQLConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/PatientDossierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZiekenhuisFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bp2_patient_dossier/controllers/ZorgverlenerListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/add-ziekenhuis-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-ziekenhuis-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/add-zorgverlener-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/add-zorgverlener-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/edit-zorgverlener-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/ziekenhuis-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/ziekenhuis-list-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/scenes/zorgverlener-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scenes/zorgverlener-list-view.fxml" afterDir="false" />
     </list>
@@ -46,30 +50,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/T_Tim/Desktop/Inhalen/Periode 2/bp2_patient_dossier",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.21609196",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/T_Tim/Desktop/Inhalen/Periode 2/bp2_patient_dossier&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.21609196&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\T_Tim\Desktop\Inhalen\Periode 2\bp2_patient_dossier\src\main\resources\scenes" />
@@ -114,7 +118,8 @@
       <workItem from="1717137724418" duration="4162000" />
       <workItem from="1717142830753" duration="4859000" />
       <workItem from="1717153944085" duration="2985000" />
-      <workItem from="1717249405792" duration="20850000" />
+      <workItem from="1717249405792" duration="20957000" />
+      <workItem from="1717324108101" duration="5390000" />
     </task>
     <task id="LOCAL-00001" summary="Model klassen toegevoegd">
       <created>1717076667154</created>
@@ -144,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717279686438</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added edit zorgverlener view">
+      <created>1717283627977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717283627977</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +179,8 @@
     <MESSAGE value="Added MySQLConnector and made main scene with styling" />
     <MESSAGE value="Added ziekenhuislijst &amp; add ziekenhuis knop" />
     <MESSAGE value="Added Zorgverlener lijst en zorgverlener add functie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Zorgverlener lijst en zorgverlener add functie" />
+    <MESSAGE value="Added edit zorgverlener view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added edit zorgverlener view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -178,5 +191,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.bp2_patient_dossier.models.Zorgverlener" memberName="id" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

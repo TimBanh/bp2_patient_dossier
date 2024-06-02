@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -14,9 +15,9 @@ import java.io.IOException;
 public class ZiekenhuisFormController {
     private MySQLConnector connector;
     private Stage stage;
-    @FXML
-    private TextField tfNaam;
+    @FXML private TextField tfNaam;
     @FXML private TextField tfLocatie;
+    @FXML private Label lbErrorMessage;
 
     public ZiekenhuisFormController() {
         this.connector  = new MySQLConnector();
@@ -29,6 +30,11 @@ public class ZiekenhuisFormController {
 
         String naam = tfNaam.getText();
         String locatie = tfLocatie.getText();
+
+        if (naam.equals("") || locatie.equals("")) {
+            lbErrorMessage.setText("Alle velden moeten ingevuld zijn!");
+            return;
+        }
 
         Ziekenhuis ziekenhuis = new Ziekenhuis(naam, locatie);
 

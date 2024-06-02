@@ -13,42 +13,42 @@
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="400.0" text="Selecteer een ziekenhuis" BorderPane.alignment="CENTER" />
    </top>
    <center>
-       <ListView fx:id="ziekenhuisList" prefHeight="300.0" prefWidth="362.0" BorderPane.alignment="CENTER" onMouseClicked="#selectZiekenhuis"/>
+       <ListView fx:id="ziekenhuisList" onMouseClicked="#selectZiekenhuis" prefHeight="300.0" prefWidth="362.0" BorderPane.alignment="CENTER" />
    </center>
    <right>
-      <VBox prefHeight="530.0" prefWidth="250.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="530.0" prefWidth="250.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#navToAddZiekenhuis" prefHeight="26.0" prefWidth="150.0" text="Add ziekenhuis">
                <VBox.margin>
-                  <Insets left="50.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#navToZorgverlener" prefHeight="26.0" prefWidth="150.0" text="Zorgverleners">
                <VBox.margin>
-                  <Insets left="50.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false"  prefHeight="26.0" prefWidth="150.0" text="Patiënten">
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Patiënten">
                <VBox.margin>
-                  <Insets left="50.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
    </right>
    <left>
-      <VBox prefHeight="530.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="530.0" prefWidth="250.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#navToHome" prefHeight="26.0" prefWidth="150.0" text="Home">
                <VBox.margin>
-                  <Insets left="50.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
    </left>
    <bottom>
-      <Label fx:id="lbZiekenhuis" prefHeight="78.0" prefWidth="500.0" BorderPane.alignment="CENTER" alignment="CENTER" />
+      <Label fx:id="lbZiekenhuis" alignment="CENTER" prefHeight="78.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
    </bottom>
 
 </BorderPane>
